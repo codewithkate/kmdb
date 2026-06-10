@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 seeds:
-  amc_a_list:
+  amc:
     boxofficemojo:
       releases:
         +enabled: true
@@ -54,10 +54,9 @@ seeds:
           Scale: varchar
 
 models:
-  amc:
-    # Always get the latest data from models/staging/
-    staging:
-      +materialized: view
-    # Data for applications in models/marts/
-    marts:
-      +materialized: table
+  # Always get the latest data from models/staging/
+  staging:
+    +materialized: view
+  # Data for applications in models/marts/
+  marts:
+    +materialized: table
