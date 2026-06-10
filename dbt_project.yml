@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'amc_a_list'
+name: 'amc'
 version: '1.0.0'
 config-version: 2
 
@@ -42,7 +42,6 @@ seeds:
         +enabled: true
         +full_refresh: true
         +quote_columns: true
-        +schema: seed_data
         +tags: boxofficemojo
         +column_types:
           Release Date: varchar
@@ -55,7 +54,10 @@ seeds:
           Scale: varchar
 
 models:
-  amc_a_list:
-    # Applies to all files under models/example/
-    example:
+  amc:
+    # Always get the latest data from models/staging/
+    staging:
+      +materialized: view
+    # Data for applications in models/marts/
+    marts:
       +materialized: table
