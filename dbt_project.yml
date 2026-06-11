@@ -2,10 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'amc'
 version: '1.0.0'
 config-version: 2
-
+dbt-cloud:
+    project-id: 70471823569651
+    
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
@@ -35,8 +37,28 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+seeds:
+  amc:
+    boxofficemojo:
+      releases:
+        +enabled: true
+        +full_refresh: true
+        +quote_columns: true
+        +tags: boxofficemojo
+        +column_types:
+          Release Date: varchar
+          Title: varchar
+          Genre: varchar
+          With: varchar
+          Runtime: varchar
+          Link: varchar
+          Distributor: varchar
+          Scale: varchar
+
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+  # Always get the latest data from models/staging/
+  staging:
+    +materialized: view
+  # Data for applications in models/marts/
+  marts:
+    +materialized: table
