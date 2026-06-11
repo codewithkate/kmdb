@@ -1,0 +1,67 @@
+sources:
+  - name: fresh
+    description: ""
+    database: analytics
+    schema: fresh
+    tables:
+      - name: diary
+        description: "{{ doc('letterboxd_source_diary') }}"
+        columns:
+          - name: c1
+            data_type: date
+            description: "{{ doc('letterboxd_Date')}}"
+          - name: c2
+            data_type: varchar
+            description: "{{ doc('letterboxd_Title')}}"
+          - name: c3
+            data_type: varchar
+            description: "{{ doc('letterboxd_Year')}}"
+          - name: c4
+            data_type: varchar
+            description: "{{ doc('letterboxd_Letterboxd_URI')}}"
+          - name: c5
+            data_type: varchar
+            description: "{{ doc('letterboxd_Rating')}}"
+          - name: c6
+            data_type: varchar
+            description: "{{ doc('letterboxd_Rewatch')}}"
+          - name: c7
+            data_type: varchar
+            description: "{{ doc('letterboxd_Tags')}}"
+          - name: c8
+            data_type: date
+            description: "{{ doc('letterboxd_Watched_Date')}}"
+          - name: c9
+            data_type: date
+            description: "Dropped in staging layer"
+
+      - name: reviews
+        description: "{[{doc('letterboxd_source_reviews')}]}"
+        columns:
+          - name: date
+            data_type: date
+            description: "{{ doc('letterboxd_Date')}}"
+          - name: name
+            data_type: varchar
+            description: "{{ doc('letterboxd_Title')}}"
+          - name: year
+            data_type: number
+            description: "{{ doc('letterboxd_Year')}}"
+          - name: letterboxduri
+            data_type: varchar
+            description: "{{ doc('letterboxd_Letterboxd_URI')}}"
+          - name: rating
+            data_type: number
+            description: "{{ doc('letterboxd_Rating')}}"
+          - name: rewatch
+            data_type: boolean
+            description: "{{ doc('letterboxd_Rewatch')}}"
+          - name: review
+            data_type: varchar
+            description: "{{ doc('letterboxd_Review')}}"
+          - name: tags
+            data_type: varchar
+            description: "{{ doc('letterboxd_Tags')}}"
+          - name: watcheddate
+            data_type: date
+            description: "{{ doc('letterboxd_Watched_Date')}}"

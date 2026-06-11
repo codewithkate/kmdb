@@ -3,3 +3,10 @@
 target/
 dbt_packages/
 logs/
+dbt_internal_packages/
+dbt_project.yml
+dbt_project.yml.lock
+dbt_modules/
+dbt_packages/
+dbt_packages.yml
+dbt_packages.yml.lock
