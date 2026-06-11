@@ -10,3 +10,4 @@ dbt_modules/
 dbt_packages/
 dbt_packages.yml
 dbt_packages.yml.lock
+*.DS_Store

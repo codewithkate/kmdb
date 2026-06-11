@@ -1,6 +1,6 @@
 sources:
-  - name: fresh
-    description: ""
+  - name: letterboxd
+    description: "Data fresh from the source, not yet transformed or cleaned. This is the raw data as it was ingested into the data warehouse."
     database: analytics
     schema: fresh
     tables:
@@ -9,13 +9,13 @@ sources:
         columns:
           - name: c1
             data_type: date
-            description: "{{ doc('letterboxd_Date')}}"
+            description: "{{ doc('letterboxd_Entry_Date')}}"
           - name: c2
             data_type: varchar
             description: "{{ doc('letterboxd_Title')}}"
           - name: c3
             data_type: varchar
-            description: "{{ doc('letterboxd_Year')}}"
+            description: "{{ doc('letterboxd_Release_Year')}}"
           - name: c4
             data_type: varchar
             description: "{{ doc('letterboxd_Letterboxd_URI')}}"
@@ -40,13 +40,13 @@ sources:
         columns:
           - name: date
             data_type: date
-            description: "{{ doc('letterboxd_Date')}}"
+            description: "{{ doc('letterboxd_Entry_Date')}}"
           - name: name
             data_type: varchar
             description: "{{ doc('letterboxd_Title')}}"
           - name: year
             data_type: number
-            description: "{{ doc('letterboxd_Year')}}"
+            description: "{{ doc('letterboxd_Release_Year')}}"
           - name: letterboxduri
             data_type: varchar
             description: "{{ doc('letterboxd_Letterboxd_URI')}}"

@@ -12,7 +12,7 @@ Only logged diary entries with a review.
 
 ## Columns
 
-{% docs letterboxd_Date %}
+{% docs letterboxd_Entry_Date %}
 Full date of entry (YYYY-MM-DD)
 {% enddocs %}
 
@@ -20,7 +20,7 @@ Full date of entry (YYYY-MM-DD)
 Proper name of Title
 {% enddocs %}
 
-{% docs letterboxd_Year %}
+{% docs letterboxd_Release_Year %}
 Release Year of the Title
 {% enddocs %}
 
@@ -44,6 +44,6 @@ Tags to identify where the location or platform where the title was watched.
 Full date when the Title was watched (YYYY-MM-DD).
 {% enddocs %}
 
-{% docs letterboxd_Watched_Review %}
+{% docs letterboxd_Review %}
 Review of the title from the watched date.
 {% enddocs %}
