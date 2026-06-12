@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_letterboxd__diary
+    description: ""
+    columns:
+      - name: entry_date
+        data_type: date
+        description: ""
+
+      - name: title
+        data_type: varchar
+        description: ""
+
+      - name: release_year
+        data_type: varchar
+        description: ""
+
+      - name: letterboxd_uri
+        data_type: varchar
+        description: ""
+
+      - name: rating
+        data_type: varchar
+        description: ""
+
+      - name: rewatch_flag
+        data_type: varchar
+        description: ""
+
+      - name: tags
+        data_type: varchar
+        description: ""
+
+      - name: watched_date
+        data_type: date
+        description: ""
+
+      - name: review
+        data_type: varchar
+        description: ""

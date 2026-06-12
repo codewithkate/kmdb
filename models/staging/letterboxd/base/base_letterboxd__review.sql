@@ -8,7 +8,7 @@ renamed as (
 
     select
         date as entry_date
-        , name
+        , name as title
         , year as release_year
         , letterboxduri as letterboxd_uri
         , rating
