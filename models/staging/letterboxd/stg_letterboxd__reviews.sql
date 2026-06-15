@@ -19,6 +19,26 @@ renamed as (
 
     from source
 
+),
+
+final as (
+
+    select
+        -- Create a surrogate key based on the combination of all relevant fields to ensure uniqueness
+        {{ dbt_utils.generate_surrogate_key([
+            'entry_date', 'title', 'release_year', 'letterboxd_uri', 'rating', 'rewatch', 'review', 'tags', 'watched_date'
+        ]) }} as review_id
+        , entry_date
+        , title
+        , release_year
+        , letterboxd_uri
+        , rating
+        , rewatch
+        , review
+        , tags
+        , watched_date
+
+    from renamed
 )
 
-select * from renamed
+select * from final
