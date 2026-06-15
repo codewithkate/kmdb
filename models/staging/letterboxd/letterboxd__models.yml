@@ -2,40 +2,97 @@ version: 2
 
 models:
   - name: stg_letterboxd__diary
-    description: ""
+    description: "{{ doc('letterboxd_source_diary') }}"
     columns:
+      - name: diary_id
+        data_type: varchar
+        description: "{{ doc('letterboxd_surrogate_key') }}"
+        data_tests:
+          - not_null
+          - unique
+
       - name: entry_date
         data_type: date
-        description: ""
+        description: "{{ doc('letterboxd_Entry_Date') }}"
 
       - name: title
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Title') }}"
+        data_tests:
+          - not_null
 
       - name: release_year
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Release_Year') }}"
+        data_tests:
+          - not_null
 
       - name: letterboxd_uri
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Letterboxd_URI') }}"
 
       - name: rating
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Rating') }}"
 
       - name: rewatch_flag
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Rewatch') }}"
+        data_tests:
+          - not_null
 
       - name: tags
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Tags') }}"
 
       - name: watched_date
         data_type: date
-        description: ""
+        description: "{{ doc('letterboxd_Watched_Date') }}"
+
+  - name: stg_letterboxd__reviews
+    description: "{{ doc('letterboxd_source_reviews') }}"
+    columns:
+      - name: review_id
+        data_type: varchar
+        description: "{{ doc('letterboxd_surrogate_key') }}"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: entry_date
+        data_type: date
+        description: "{{ doc('letterboxd_Entry_Date') }}"
+
+      - name: title
+        data_type: varchar
+        description: "{{ doc('letterboxd_Title') }}"
+        data_tests:
+          - not_null
+
+      - name: release_year
+        data_type: number
+        description: "{{ doc('letterboxd_Release_Year') }}"
+
+      - name: letterboxd_uri
+        data_type: varchar
+        description: "{{ doc('letterboxd_Letterboxd_URI') }}"
+
+      - name: rating
+        data_type: number
+        description: "{{ doc('letterboxd_Rating') }}"
+
+      - name: rewatch
+        data_type: boolean
+        description: "{{ doc('letterboxd_Rewatch') }}"
 
       - name: review
         data_type: varchar
-        description: ""
+        description: "{{ doc('letterboxd_Review') }}"
+
+      - name: tags
+        data_type: varchar
+        description: "{{ doc('letterboxd_Tags') }}"
+
+      - name: watched_date
+        data_type: date
+        description: "{{ doc('letterboxd_Watched_Date') }}"
