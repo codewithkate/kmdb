@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -37,23 +36,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
-seeds:
-  watchlist:
-    boxofficemojo:
-      releases:
-        +enabled: true
-        +full_refresh: true
-        +quote_columns: true
-        +tags: boxofficemojo
-        +column_types:
-          Release Date: varchar
-          Title: varchar
-          Genre: varchar
-          With: varchar
-          Runtime: varchar
-          Link: varchar
-          Distributor: varchar
-          Scale: varchar
 
 models:
     # Always get the latest data from models/staging/
@@ -62,5 +44,7 @@ models:
       letterboxd:
         +tags: "letterboxd"
     # Data for applications in models/marts/
+    intermediate:
+      +materialized: table
     marts:
       +materialized: table
