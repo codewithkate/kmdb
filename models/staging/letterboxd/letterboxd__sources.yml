@@ -3,9 +3,28 @@ sources:
     description: "Data fresh from the source, not yet transformed or cleaned. This is the raw data as it was ingested into the data warehouse."
     database: analytics
     schema: fresh
+    config:
+      enabled: true
+      event_time: my_time_field
+      meta:
+        owner: kc
+        source: letterboxd
+        model_maturity: in dev
+
     tables:
       - name: diary
         description: "{{ doc('letterboxd_source_diary') }}"
+        config:
+          enabled: true
+          freshness:
+            warn_after:  
+              count: 7
+              period: day
+            error_after:
+              count: 14
+              period: day
+          loaded_at_query: "select to_timestamp(max(c8)) from {{ this }}"
+
         columns:
           - name: c1
             data_type: date
@@ -35,8 +54,20 @@ sources:
             data_type: date
             description: "Dropped in staging layer"
 
+
       - name: reviews
         description: "{[{doc('letterboxd_source_reviews')}]}"
+        config:
+          enabled: true
+          freshness:
+            warn_after:  
+              count: 7
+              period: day
+            error_after:
+              count: 14
+              period: day
+          loaded_at_query: "select to_timestamp(max(date)) from {{ this }}"
+
         columns:
           - name: date
             data_type: date
