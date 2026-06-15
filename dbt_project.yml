@@ -38,11 +38,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 
 models:
+  watchlist:
     # Always get the latest data from models/staging/
     staging:
       +on_schema_change: "sync_all_columns"
-      +materialized: view
       letterboxd:
+        +materialized: table
         +tags: "letterboxd"
     # Data for applications in models/marts/
     intermediate:
