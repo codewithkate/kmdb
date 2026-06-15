@@ -40,6 +40,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
     # Always get the latest data from models/staging/
     staging:
+      +on_schema_change: "sync_all_columns"
       +materialized: view
       letterboxd:
         +tags: "letterboxd"
