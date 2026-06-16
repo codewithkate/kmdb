@@ -48,6 +48,23 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
+This project includes tables, views, and models created by the KMDB project.
+
+### What Gets Tracked
+
+#### Movies
+
+Most movies I watch gets added to my letterboxd profile and extracted from the platform on a regular basis. The diary table includes:
+
+- **Movie Details**: Name, release year
+- **Ratings**: Scale of 0-5
+- **Reviews**: Review ID (when available)
+- **Rewatches**
+
+## Table Schemas
+
+## Models
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -63,6 +80,8 @@
 ## Roadmap
 
 - [x] Configure dbt project
+- [x] Test Sources
+- [ ] Snapshot Reviews
 - [ ] Movie Tracking Table
 - [ ] Monthly Movie Savings
 - [ ] Movie Savings Summary
