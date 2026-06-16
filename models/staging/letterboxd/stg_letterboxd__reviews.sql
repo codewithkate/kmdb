@@ -13,7 +13,7 @@ renamed as (
         , letterboxduri as letterboxd_uri
         , rating
         , rewatch
-        , review
+        , review as review_text
         , tags
         , watcheddate as watched_date
 
@@ -34,7 +34,7 @@ final as (
         , letterboxd_uri
         , rating
         , rewatch
-        , review
+        , review_text
         , tags
         , watched_date
 

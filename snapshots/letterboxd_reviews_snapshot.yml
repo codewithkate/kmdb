@@ -1,0 +1,14 @@
+snapshots:
+  - name: letterboxd_reviews_snapshot
+    relation: ref('stg_letterboxd__reviews')
+    description:  "Snapshot of Letterboxd reviews table to rollback to previous versions of reviews"
+    config:
+      database: snapshots_db
+      schema: kmdb
+      strategy: check
+      unique_key: review_id
+      check_cols: ["review_text"]
+      snapshot_meta_column_names: 
+        dbt_valid_from: posted_at
+        dbt_valid_to: modified_at
+      hard_deletes: new_record

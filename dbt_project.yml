@@ -43,8 +43,8 @@ models:
     staging:
       +on_schema_change: "sync_all_columns"
       letterboxd:
-        +materialized: table
         +tags: "letterboxd"
+        +materialized: view
     # Data for applications in models/marts/
     intermediate:
       +materialized: table

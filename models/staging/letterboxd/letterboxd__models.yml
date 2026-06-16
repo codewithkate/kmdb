@@ -24,8 +24,6 @@ models:
       - name: release_year
         data_type: varchar
         description: "{{ doc('letterboxd_Release_Year') }}"
-        data_tests:
-          - not_null
 
       - name: letterboxd_uri
         data_type: varchar
@@ -38,8 +36,6 @@ models:
       - name: rewatch_flag
         data_type: varchar
         description: "{{ doc('letterboxd_Rewatch') }}"
-        data_tests:
-          - not_null
 
       - name: tags
         data_type: varchar

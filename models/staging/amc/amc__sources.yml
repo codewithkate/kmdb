@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: amc
+    description: "{{ doc('amc_membership_pricing') }}"
+    database: analytics
+    schema: dbtkate
+    tables:
+      - name: membership_pricing
+        description: "{{ doc('amc_membership_pricing') }}"
+        columns:
+          - name: as_of_date
+            data_type: date
+            description: "{{ doc('amc_a_list_pricing_as_of_date') }}"
+          - name: monthly_cost
+            data_type: float
+            description: "{{ doc('amc_a_list_pricing_monthly_cost') }}"
