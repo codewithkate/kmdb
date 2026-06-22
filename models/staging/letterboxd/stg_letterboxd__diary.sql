@@ -26,7 +26,7 @@ final as (
         -- Create a surrogate key based on the combination of all relevant fields to ensure uniqueness
         {{ dbt_utils.generate_surrogate_key([
             'entry_date', 'title', 'release_year', 'letterboxd_uri', 'rating', 'rewatch_flag', 'tags', 'watched_date'
-        ]) }} as diary_id
+        ]) }} as reservation_id
         , entry_date
         , title
         , release_year
@@ -34,6 +34,10 @@ final as (
         , rating
         , rewatch_flag as rewatch
         , tags
+        -- Parse array of tags
+        , null as location
+        , null as ticket_cost
+        , null as theatre_format
         , watched_date
 
     from renamed
