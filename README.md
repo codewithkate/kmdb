@@ -61,6 +61,10 @@ Most movies I watch gets added to my letterboxd profile and extracted from the p
 - **Reviews**: Review ID (when available)
 - **Rewatches**
 
+#### Upcoming Releases
+
+TBD
+
 ## Table Schemas
 
 ## Models
@@ -81,7 +85,7 @@ Most movies I watch gets added to my letterboxd profile and extracted from the p
 
 - [x] Configure dbt project
 - [x] Test Sources
-- [ ] Snapshot Reviews
+- [x] Snapshot Reviews
 - [ ] Movie Tracking Table
 - [ ] Monthly Movie Savings
 - [ ] Movie Savings Summary
